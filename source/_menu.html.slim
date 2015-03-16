@@ -1,0 +1,8 @@
+.menu.affix
+  ul.nav
+    - menu_tree.each do |heading, sub_headings|
+      li.menu__item
+        = link_to heading.text, "##{heading[:id]}"
+        ul.menu__sub.nav
+          - sub_headings.each do |heading|
+            li.menu__item = link_to heading.text, "##{heading[:id]}"
